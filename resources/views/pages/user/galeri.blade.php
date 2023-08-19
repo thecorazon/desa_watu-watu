@@ -11,8 +11,8 @@
 <section class="py-1 text-center container">
     <div class="row py-lg-3">
         <div class="col-lg-6 col-md-8 mx-auto">
-            <h3 class="fw-light">Galeri Desa Batursari</h3>
-            <p class="lead text-muted">Berisi foto - foto di Desa Batursari </p>
+            <h3 class="fw-light">Galeri Desa Watu-Watu</h3>
+            <p class="lead text-muted">Berisi foto - foto di Desa Watu-Watu </p>
         </div>
     </div>
 </section>
