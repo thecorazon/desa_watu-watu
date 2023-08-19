@@ -1,7 +1,7 @@
 <nav class="navbar navbar-expand-lg bg-light p-1 fixed-top navbar-desa">
     <div class="container">
         <a class="navbar-brand d-flex" href="/">
-            <img src="{{ asset('assets/images/logo_kabupaten_pekalongan.png') }}" alt="Kabupaten Pekalongan" width="40" height="45" class="d-inline-block align-text-top">
+            <img src="{{ asset('assets/images/logo_bombana.png') }}" alt="Kabupaten Pekalongan" width="40" height="45" class="d-inline-block align-text-top">
             <p class="mt-2 ms-2 fs-5">Desa Batursari</p>
         </a>
         <button class="btn btn-white btn-navbar" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -25,7 +25,7 @@
                     </ul>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link {{ Request::is('berita-desa') ? 'active' : '' }}" href="/berita-desa">Berita Desa</a>
+                    <a class="nav-link {{ Request::is('berita-desa') ? 'active' : '' }}" href="/index.php/berita-desa">Berita Desa</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link {{ Request::is('galeri') ? 'active' : '' }}" href="/galeri">Galeri</a>
