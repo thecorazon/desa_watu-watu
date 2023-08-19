@@ -1,14 +1,14 @@
 @extends('layouts.app')
 
-@section('meta-description', 'Visi Misi Desa Batursari')
+@section('meta-description', 'Visi Misi Desa Watu-Watu')
 
-@section('meta-keywords', 'Visi Misi, Batursari, Desa, Talun, Pekalongan, Kabupaten Pekalongan, Kecamatan Talun')
+@section('meta-keywords', 'Visi Misi, Watu-Watu, Desa, Talun, Pekalongan, Kabupaten Pekalongan, Kecamatan Talun')
 
-@section('title', 'Desa Batursari | Visi Misi Desa')
+@section('title', 'Desa Watu-Watu | Visi Misi Desa')
 
 @section('content')
 
-<h4 class="fw-bold">VISI DAN MISI DESA BATURSARI</h4>
+<h4 class="fw-bold">VISI DAN MISI DESA Watu-Watu</h4>
 
 <div class="text-center">
     <img class="mt-2" src="{{ asset('assets/images/visi-misi.png') }}" alt="" width="300px">

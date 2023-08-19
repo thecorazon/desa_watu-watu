@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg bg-light p-1 fixed-top navbar-desa">
+<nav class="navbar navbar-expand-lg bg-green p-1 fixed-top navbar-desa">
     <div class="container">
         <a class="navbar-brand d-flex" href="/">
             <img src="{{ asset('assets/images/logo_bombana.png') }}" alt="Kabupaten Pekalongan" width="40" height="45" class="d-inline-block align-text-top">
@@ -36,7 +36,6 @@
                 <li class="nav-item">
                     <a class="nav-link {{ Request::is('kontak') ? 'active' : '' }}" href="/kontak">Kontak</a>
                 </li>
-                <a class="btn btn-outline-primary" type="button" href="/login">Login</a>
             </ul>
         </div>
     </div>

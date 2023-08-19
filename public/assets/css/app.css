@@ -13,9 +13,12 @@ body {
 }
 
 /* Navbar CSS */
+.bg-green{
+    background-color: green;
+}
 .nav-link.active {
     font-weight: bold;
-    color: #00cccc !important;
+    color: white !important;
 }
 
 /* Coursel CSS */
@@ -198,7 +201,7 @@ body {
 
 @media screen and (min-width: 300px) {
     #img-about {
-        width: 250px;
+        width: 200px;
     }
 
 }
@@ -209,6 +212,6 @@ body {
     }
 
     #img-about {
-        width: 300px;
+        width: 200px;
     }
 }

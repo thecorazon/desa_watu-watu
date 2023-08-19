@@ -1,14 +1,14 @@
 @extends('layouts.app')
 
-@section('meta-description', 'Struktur Organisasi Desa Batursari')
+@section('meta-description', 'Struktur Organisasi Desa Watu-Watu')
 
-@section('meta-keywords', 'Struktur Organisasi, Batursari, Desa, Talun, Pekalongan, Kabupaten Pekalongan, Kecamatan Talun')
+@section('meta-keywords', 'Struktur Organisasi, Watu-Watu, Desa, Talun, Pekalongan, Kabupaten Pekalongan, Kecamatan Talun')
 
-@section('title', 'Desa Batursari | Struktur Organisasi')
+@section('title', 'Desa Watu-Watu | Struktur Organisasi')
 
 @section('content')
 
-<h4 class="fw-bold">STRUKTUR ORGANISASI PEMERINTAHAN DESA BATURSARI</h4>
+<h4 class="fw-bold">STRUKTUR ORGANISASI PEMERINTAHAN DESA Watu-Watu</h4>
 
 @if(isset($dataStrukturOrganisasi))
     <div class="text-center mt-4">
