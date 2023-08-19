@@ -4,14 +4,14 @@
             <img src="{{ asset('assets/images/sawah_desa_batursari.jpg') }}" height="700vh" class="d-block w-100" alt="...">
             <div class="carousel-caption d-md-block">
                 <h5>Selamat Datang!</h5>
-                <p>Desa Batursari, Kecamatan Talun, Kabupaten Pekalongan</p>
+                <p>Desa Watu-Watu, Kecamatan Lantari Jaya, Kabupaten Bombana</p>
             </div>
         </div>
         <div class="carousel-item">
             <img src="{{ asset('assets/images/kandang-ayam.jpeg') }}" class="d-block w-100" height="700vh" alt="...">
             <div class="carousel-caption d-md-block">
                 <h5>Selamat Datang!</h5>
-                <p>Desa Batursari, Kecamatan Talun, Kabupaten Pekalongan</p>
+                <p>Desa Watu-Watu, Kecamatan Lantari Jaya, Kabupaten Bombana</p>
             </div>
         </div>
     </div>
