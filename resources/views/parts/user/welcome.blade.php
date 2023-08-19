@@ -8,7 +8,7 @@
             </div>
             <div class="col-lg-8 col-md-12 col-12 ps-lg-3 mt-lg-5 mt-4">
                 <div class="about-text">
-                    <p class="fs-4 fw-bold">Desa Batursari <br> Kecamatan Talun <br> Kabupaten Pekalongan</p>
+                    <p class="fs-4 fw-bold">Desa Watu-Watu <br> Kecamatan Lantari Jaya <br> Kabupaten Bombana</p>
                     @isset($profilDesa)
                         {!! $profilDesa->deskripsi !!}
                     @endisset

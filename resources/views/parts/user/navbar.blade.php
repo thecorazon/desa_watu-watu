@@ -2,7 +2,7 @@
     <div class="container">
         <a class="navbar-brand d-flex" href="/">
             <img src="{{ asset('assets/images/logo_bombana.png') }}" alt="Kabupaten Pekalongan" width="40" height="45" class="d-inline-block align-text-top">
-            <p class="mt-2 ms-2 fs-5">Desa Batursari</p>
+            <p class="mt-2 ms-2 fs-5">Desa Watu-Watu</p>
         </a>
         <button class="btn btn-white btn-navbar" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
