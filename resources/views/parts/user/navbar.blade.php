@@ -31,7 +31,7 @@
                     <a class="nav-link {{ Request::is('galeri') ? 'active' : '' }}" href="/galeri">Galeri</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link {{ Request::is('kegiatan-desa') ? 'active' : '' }}" href="/kegiatan-desa">Kegiatan Desa</a>
+                    <a class="nav-link {{ Request::is('kegiatan-desa') ? 'active' : '' }}" href="/index.php/kegiatan-desa">Kegiatan Desa</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link {{ Request::is('kontak') ? 'active' : '' }}" href="/kontak">Kontak</a>
