@@ -18,10 +18,10 @@ class UserFactory extends Factory
     public function definition(): array
     {
         return [
-            'name' => 'admin',
-            'email' => 'admin-batursari@gmail.com',
+            'name' => 'ilkom',
+            'email' => 'ilkom@gmail.com',
             'email_verified_at' => now(),
-            'password' => bcrypt('desabatursari123##'), // password
+            'password' => bcrypt('ilkom123'), // password
             'remember_token' => Str::random(10),
         ];
     }
