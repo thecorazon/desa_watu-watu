@@ -1,14 +1,14 @@
 @extends('layouts.app')
 
-@section('meta-description', 'Peta Desa Batursari')
+@section('meta-description', 'Peta Desa Watu-Watu')
 
-@section('meta-keywords', 'Peta, Batursari, Desa, Talun, Pekalongan, Kabupaten Pekalongan, Kecamatan Talun')
+@section('meta-keywords', 'Peta, Watu-Watu, Desa, Talun, Pekalongan, Kabupaten Pekalongan, Kecamatan Talun')
 
-@section('title', 'Desa Batursari | Peta Desa')
+@section('title', 'Desa Watu-Watu | Peta Desa')
 
 @section('content')
 
-<h4 class="fw-bold">PETA DESA BATURSARI</h4>
+<h4 class="fw-bold">PETA DESA Watu-Watu</h4>
 
 @if(isset($dataPetaDesa))
     <div class="peta-desa mt-3">
