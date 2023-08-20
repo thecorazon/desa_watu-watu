@@ -1,10 +1,10 @@
 @extends('layouts.app')
 
-@section('meta-description', 'Kegiatan Desa Batursari')
+@section('meta-description', 'Kegiatan Desa Watu-Watu')
 
-@section('meta-keywords', 'Kegiatan, Batursari, Desa, Talun, Pekalongan, Kabupaten Pekalongan, Kecamatan Talun')
+@section('meta-keywords', 'Kegiatan, Watu-Watu, Desa, Talun, Pekalongan, Kabupaten Pekalongan, Kecamatan Talun')
 
-@section('title', 'Desa Batursari | Kegiatan Desa')
+@section('title', 'Desa Watu-Watu | Kegiatan Desa')
 
 @section('content')
 

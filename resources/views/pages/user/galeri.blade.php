@@ -1,10 +1,10 @@
 @extends('layouts.app')
 
-@section('meta-description', 'Galeri Desa Batursari')
+@section('meta-description', 'Galeri Desa Watu-Watu')
 
-@section('meta-keywords', 'Galeri, Batursari, Desa, Talun, Pekalongan, Kabupaten Pekalongan, Kecamatan Talun')
+@section('meta-keywords', 'Galeri, Watu-Watu, Desa, Talun, Pekalongan, Kabupaten Pekalongan, Kecamatan Talun')
 
-@section('title', 'Desa Batursari | Galeri')
+@section('title', 'Desa Watu-Watu | Galeri')
 
 @section('content')
 
