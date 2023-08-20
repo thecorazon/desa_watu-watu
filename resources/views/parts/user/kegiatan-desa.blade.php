@@ -1,6 +1,6 @@
 <section id="kegiatan-desa">
     <div class="container">
-        <h4 class="text-center fw-bold mb-3">Kegiatan Desa Batursari</h4>
+        <h4 class="text-center fw-bold mb-3">Kegiatan Desa Watu-Watu</h4>
         <div class="slideshow-kegiatan mb-3">
             
             @isset($kegiatan)

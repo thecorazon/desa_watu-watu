@@ -1,14 +1,14 @@
 @extends('layouts.app')
 
-@section('meta-description', 'Perangkat Desa Batursari')
+@section('meta-description', 'Perangkat Desa Watu-Watu')
 
-@section('meta-keywords', 'Perangkat Desa, Batursari, Desa, Talun, Pekalongan, Kabupaten Pekalongan, Kecamatan Talun')
+@section('meta-keywords', 'Perangkat Desa, Watu-Watu, Desa, Talun, Pekalongan, Kabupaten Pekalongan, Kecamatan Talun')
 
-@section('title', 'Desa Batursari | Profil Perangkat Desa')
+@section('title', 'Desa Watu-Watu | Profil Perangkat Desa')
 
 @section('content')
 
-<h4 class="fw-bold">PROFIL PERANGKAT DESA BATURSARI</h4>
+<h4 class="fw-bold">PROFIL PERANGKAT DESA Watu-Watu</h4>
 
 @if(isset($dataProfilPerangkatDesa))
     <div class="row mt-3">

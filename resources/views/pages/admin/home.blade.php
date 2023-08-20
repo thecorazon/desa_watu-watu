@@ -10,7 +10,7 @@
 <div class="row">
     <div class="col-xl-3 col-md-6">
         <div class="card bg-success text-white mb-4">
-            <div class="card-body"><i class="bi bi-gender-male" style="font-size: 45px"></i><br> Jumlah Jiwa Desa Batursari</div>
+            <div class="card-body"><i class="bi bi-gender-male" style="font-size: 45px"></i><br> Jumlah Jiwa Desa Watu-Watu</div>
             <div class="card-footer d-flex align-items-center justify-content-between">
                 <p class="text-white">@if(isset($dataPenduduk)) {{ $dataPenduduk->jumlah_penduduk }} @else 0  @endif Jiwa</p>
             </div>

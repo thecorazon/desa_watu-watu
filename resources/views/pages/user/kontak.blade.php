@@ -1,16 +1,16 @@
 @extends('layouts.app')
 
-@section('meta-description', 'Kontak Desa Batursari')
+@section('meta-description', 'Kontak Desa Watu-Watu')
 
-@section('meta-keywords', 'Kontak, Batursari, Desa, Talun, Pekalongan, Kabupaten Pekalongan, Kecamatan Talun')
+@section('meta-keywords', 'Kontak, Watu-Watu, Desa, Talun, Pekalongan, Kabupaten Pekalongan, Kecamatan Talun')
 
-@section('title', 'Desa Batursari | Kontak')
+@section('title', 'Desa Watu-Watu | Kontak')
 
 @section('content')
 
 <h4 class="fw-bold">LOKASI</h4>
 
-<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d127271.0067241131!2d121.85591931953924!3d-4.554594004003773!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2da2956c70332f43%3A0x1346a959df95a86d!2sWatu-Watu%2C%20Kec.%20Lantari%20Jaya%2C%20Kabupaten%20Bombana%2C%20Sulawesi%20Tenggara!5e0!3m2!1sid!2sid!4v1692433320887!5m2!1sid!2sid" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" ></iframe>
+<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4652.395467901467!2d109.7367853668046!3d-7.017885225233185!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e701813b10fc7b9%3A0xa1f8014340914b6a!2sBalai%20Desa%20Watu-Watu%20Talun!5e0!3m2!1sid!2sid!4v1690776736607!5m2!1sid!2sid" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
 
 <div class="kontak-desa mt-3">
     <h4 class="fw-bold mt-2">KONTAK</h4>
@@ -21,13 +21,13 @@
                     <h5>Alamat</h5>
                     <div class="d-flex">
                         <i class="bi bi-geo-alt" style="font-size: 30px"></i>
-                        <p class="ms-2" style="font-size: 14px">Desa Watu-Watu, Kecamatan Lantari Jaya, Kabupaten Bombana, Sulawesi Tenggara</p>
+                        <p class="ms-2" style="font-size: 14px">Jelun, Watu-Watu, Kecamatan Talun, Kabupaten Pekalongan, Jawa Tengah 51192.</p>
                     </div>
                 </div>
             </div>
             <div class="row mt-2">
                 <div class="col-md-12">
-                    <h5>Telepon atau Whatsapp</h5>
+                    <h5>Telepon</h5>
                     <div class="d-flex">
                         <i class="bi bi-telephone p-1" style="font-size: 30px"></i>
                         <p class="ms-2 mt-3" style="font-size: 14px">08xxxxxxxxx</p>
@@ -39,7 +39,7 @@
                     <h5>Email</h5>
                     <div class="d-flex">
                         <i class="bi bi-envelope p-1" style="font-size: 30px"></i>
-                        <p class="ms-2 mt-3" style="font-size: 14px">desaWatu-Watu@gmail.com</p>
+                        <p class="ms-2 mt-3" style="font-size: 14px">Watu-Watu-talun@gmail.com</p>
                     </div>
                 </div>
             </div>

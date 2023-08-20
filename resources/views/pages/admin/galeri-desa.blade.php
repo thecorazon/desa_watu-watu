@@ -25,7 +25,7 @@
 <div class="card mb-4">
     <div class="card-header">
         <i class="bi bi-table me-1"></i>
-        Tabel Galeri Desa Batursari
+        Tabel Galeri Desa Watu-Watu
     </div>
     <div class="card-body">
         <div class="row">
