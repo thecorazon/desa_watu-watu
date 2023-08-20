@@ -1,17 +1,17 @@
 @extends('layouts.app')
 
-@section('meta-description', 'Berita Desa Batursari')
+@section('meta-description', 'Berita Desa Watu-Watu')
 
-@section('meta-keywords', 'Berita, Batursari, Desa, Talun, Pekalongan, Kabupaten Pekalongan, Kecamatan Talun')
+@section('meta-keywords', 'Berita, Watu-Watu, Desa, Lantari Jaya, Bombana, Kabupaten Bombana, Kecamatan Lantari Jaya')
 
-@section('title', 'Desa Batursari | Berita Desa')
+@section('title', 'Desa Watu-Watu | Berita Desa')
 
 @section('content')
 
 <section class="py-1 text-center container">
     <div class="row py-lg-3">
         <div class="col-lg-6 col-md-8 mx-auto">
-            <h3 class="fw-light">Berita Desa Batursari</h3>
+            <h3 class="fw-light">Berita Desa Watu-Watu</h3>
         </div>
     </div>
 </section>

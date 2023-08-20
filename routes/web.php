@@ -83,50 +83,65 @@ Route::get('/dashboard/profil-kepala-desa', [ProfilKepalaDesaController::class, 
 Route::post('/dashboard/profil-kepala-desa', [ProfilKepalaDesaController::class, 'update'])->middleware('auth')->name('editProfilKepalaDesa');
 
 // Profil Perangkat Desa Admin
-Route::get('/dashboard/profil-perangkat-desa', [ProfilPerangkatDesaController::class, 'index'])->middleware('auth')->name('profilPerangkatDesaAdmin');
-Route::get('/dashboard/tambah-profil-perangkat-desa', [ProfilPerangkatDesaController::class, 'create'])->middleware('auth')->name('tambahProfilPerangkatDesaAdmin');
-Route::post('/dashboard/tambah-profil-perangkat-desa', [ProfilPerangkatDesaController::class, 'store'])->middleware('auth')->name('tambahProfilPerangkatDesaAdmin');
-Route::get('/dashboard/edit-profil-perangkat-desa/{id}', [ProfilPerangkatDesaController::class, 'edit'])->middleware('auth')->name('editProfilPerangkatDesaAdmin');
-Route::post('/dashboard/edit-profil-perangkat-desa/{id}', [ProfilPerangkatDesaController::class, 'update'])->middleware('auth')->name('editProfilPerangkatDesaAdmin');
-Route::post('/dashboard/hapus-profil-perangkat-desa/{id}', [ProfilPerangkatDesaController::class, 'destroy'])->middleware('auth')->name('hapusProfilPerangkatDesaAdmin');
-Route::get('/dashboard/tampil-profil-perangkat-desa/{id}', [ProfilPerangkatDesaController::class, 'tampilDataPerangkatDesa'])->name('tampilProfilPerangkatDesaAdmin');
+Route::controller(GaleriDesaController::class)->prefix('/dashboard')->group(function () {
+    Route::get('/profil-perangkat-desa', 'index')->name('profilPerangkatDesaAdmin');
+    Route::get('/tambah-profil-perangkat-desa', 'create')->name('tambahProfilPerangkatDesaAdmin');
+    Route::post('/tambah-profil-perangkat-desa', 'store')->name('tambahProfilPerangkatDesaAdmin');
+    Route::get('/edit-profil-perangkat-desa/{id}', 'edit')->name('editProfilPerangkatDesaAdmin');
+    Route::post('/edit-profil-perangkat-desa/{id}', 'update')->name('editProfilPerangkatDesaAdmin');
+    Route::post('/hapus-profil-perangkat-desa/{id}', 'destroy')->name('hapusProfilPerangkatDesaAdmin');
+    Route::get('/tampil-profil-perangkat-desa/{id}', 'tampilDataPerangkatDesa')->name('tampilProfilPerangkatDesaAdmin');
+     
+})->middleware("auth");
+
 
 // Peta Desa Admin
-Route::get('/dashboard/peta-desa', [PetaDesaController::class, 'index'])->middleware('auth')->name('petaDesaAdmin');
+Route::get('/dashboard/peta-desa', [PetaDesaController::class, 'index'])->middleware("auth")->name('petaDesaAdmin');
 Route::post('/dashboard/peta-desa/edit-peta-desa', [PetaDesaController::class, 'update'])->middleware('auth')->name('editPetaDesaAdmin');
 
 // Galeri Desa Admin
-Route::get('/dashboard/galeri-desa', [GaleriDesaController::class, 'index'])->middleware('auth')->name('galeriDesaAdmin');
-Route::get('/dashboard/tambah-galeri-desa', [GaleriDesaController::class, 'create'])->middleware('auth')->name('tambahGaleriDesaAdmin');
-Route::post('/dashboard/tambah-galeri-desa', [GaleriDesaController::class, 'store'])->middleware('auth')->name('tambahGaleriDesaAdmin');
-Route::get('/dashboard/edit-galeri-desa/{id}', [GaleriDesaController::class, 'edit'])->middleware('auth')->name('editGaleriDesaAdmin');
-Route::post('/dashboard/edit-galeri-desa/{id}', [GaleriDesaController::class, 'update'])->middleware('auth')->name('editGaleriDesaAdmin');
-Route::post('/dashboard/hapus-galeri-desa/{id}', [GaleriDesaController::class, 'destroy'])->middleware('auth')->name('hapusGaleriDesaAdmin');
+Route::controller(GaleriDesaController::class)->prefix('/dashboard')->group(function () {
+    Route::get('/galeri-desa',  'index')->name('galeriDesaAdmin');
+    Route::get('/tambah-galeri-desa',  'create')->name('tambahGaleriDesaAdmin');
+    Route::post('/tambah-galeri-desa',  'store')->name('tambahGaleriDesaAdmin');
+    Route::get('/edit-galeri-desa/{id}',  'edit')->name('editGaleriDesaAdmin');
+    Route::post('/edit-galeri-desa/{id}',  'update')->name('editGaleriDesaAdmin');
+    Route::post('/hapus-galeri-desa/{id}',  'destroy')->name('hapusGaleriDesaAdmin');
+})->middleware("auth");
 
 // Kegiatan Desa Admin
-Route::get('/dashboard/kegiatan-desa', [KegiatanDesaController::class, 'index'])->middleware('auth')->name('kegiatanDesaAdmin');
-Route::get('/dashboard/tambah-kegiatan-desa', [KegiatanDesaController::class, 'create'])->middleware('auth')->name('tambahKegiatanDesaAdmin');
-Route::post('/dashboard/tambah-kegiatan-desa', [KegiatanDesaController::class, 'store'])->middleware('auth')->name('tambahKegiatanDesaAdmin');
-Route::get('/dashboard/edit-kegiatan-desa/{id}', [KegiatanDesaController::class, 'edit'])->middleware('auth')->name('editKegiatanDesaAdmin');
-Route::post('/dashboard/edit-kegiatan-desa/{id}', [KegiatanDesaController::class, 'update'])->middleware('auth')->name('editKegiatanDesaAdmin');
-Route::post('/dashboard/hapus-kegiatan-desa/{id}', [KegiatanDesaController::class, 'destroy'])->middleware('auth')->name('hapusKegiatanDesaAdmin');
+Route::controller(KegiatanDesaController::class)->prefix("/dashboard")->group(function () {
+    Route::get('/kegiatan-desa', 'index')->name('kegiatanDesaAdmin');
+    Route::get('/tambah-kegiatan-desa', 'create')->name('tambahKegiatanDesaAdmin');
+    Route::post('/tambah-kegiatan-desa',  'store')->name('tambahKegiatanDesaAdmin');
+    Route::get('/edit-kegiatan-desa/{id}', 'edit')->name('editKegiatanDesaAdmin');
+    Route::post('/edit-kegiatan-desa/{id}', 'update')->name('editKegiatanDesaAdmin');
+    Route::post('/hapus-kegiatan-desa/{id}', 'destroy')->name('hapusKegiatanDesaAdmin');
+})->middleware("auth");
+
 
 // Berita Desa Admin
-Route::get('/dashboard/berita-desa', [BeritaDesaController::class, 'index'])->middleware('auth')->name('beritaDesaAdmin');
-Route::get('/dashboard/tambah-berita-desa', [BeritaDesaController::class, 'create'])->middleware('auth')->name('tambahBeritaDesaAdmin');
-Route::post('/dashboard/tambah-berita-desa', [BeritaDesaController::class, 'store'])->middleware('auth')->name('tambahBeritaDesaAdmin');
-Route::get('/dashboard/edit-berita-desa/{id}', [BeritaDesaController::class, 'edit'])->middleware('auth')->name('editBeritaDesaAdmin');
-Route::post('/dashboard/edit-berita-desa/{id}', [BeritaDesaController::class, 'update'])->middleware('auth')->name('editBeritaDesaAdmin');
-Route::post('/dashboard/hapus-berita-desa/{id}', [BeritaDesaController::class, 'destroy'])->middleware('auth')->name('hapusBeritaDesaAdmin');
-Route::get('/dashboard/berita-desa/{slug}', [BeritaDesaController::class, 'detail'])->middleware('auth')->name('tampilBeritaDesa');
+Route::controller(BeritaDesaController::class)->prefix("/dashboard")->group(function () {
+    Route::get('/berita-desa', 'index')->name('beritaDesaAdmin');
+    Route::get('/tambah-berita-desa', 'create')->name('tambahBeritaDesaAdmin');
+    Route::post('/tambah-berita-desa', 'store')->name('tambahBeritaDesaAdmin');
+    Route::get('/edit-berita-desa/{id}', 'edit')->name('editBeritaDesaAdmin');
+    Route::post('/edit-berita-desa/{id}', 'update')->name('editBeritaDesaAdmin');
+    Route::post('/hapus-berita-desa/{id}', 'destroy')->name('hapusBeritaDesaAdmin');
+    Route::get('/berita-desa/{slug}', 'detail')->name('tampilBeritaDesa');
+})->middleware('auth');
+
 
 // Data Penduduk
-Route::get('/dashboard/data-penduduk', [DataPendudukController::class, 'index'])->middleware('auth')->name('dataPendudukAdmin');
-Route::get('dashboard/tambah-data-penduduk', [DataPendudukController::class, 'create'])->middleware('auth')->name('tambahDataPendudukAdmin');
-Route::post('dashboard/tambah-data-penduduk', [DataPendudukController::class, 'store'])->middleware('auth')->name('tambahDataPendudukAdmin');
-Route::get('dashboard/edit-data-penduduk/{id}', [DataPendudukController::class, 'edit'])->middleware('auth')->name('editDataPendudukAdmin');
-Route::post('dashboard/edit-data-penduduk/{id}', [DataPendudukController::class, 'update'])->middleware('auth')->name('editDataPendudukAdmin');
-Route::post('dashboard/hapus-data-penduduk/{id}', [DataPendudukController::class, 'destroy'])->middleware('auth')->name('hapusDataPendudukAdmin');
+Route::controller(DataPendudukController::class)->prefix("/dashboard")->group(function () {
+    Route::get('/data-penduduk',  'index')->middleware('auth')->name('dataPendudukAdmin');
+    Route::get('/tambah-data-penduduk',  'create')->name('tambahDataPendudukAdmin');
+    Route::post('/tambah-data-penduduk',  'store')->name('tambahDataPendudukAdmin');
+    Route::get('/edit-data-penduduk/{id}',  'edit')->name('editDataPendudukAdmin');
+    Route::post('/edit-data-penduduk/{id}',  'update')->name('editDataPendudukAdmin');
+    Route::post('/hapus-data-penduduk/{id}',  'destroy')->name('hapusDataPendudukAdmin');
+})->middleware('auth');
+
 
 // Generate Sitemap
 Route::get('/genSet', [AppController::class, 'generateSitemap']);
