@@ -37,10 +37,21 @@
                         <div class="sb-nav-link-icon"><i class="bi bi-images"></i></div>
                         Galeri Desa
                     </a>
-                    <a class="nav-link {{ Request::is('dashboard/data-penduduk') ? 'active' : '' }}"  href="{{ route('dataPendudukAdmin') }}">
+                   {{--  <a class="nav-link {{ Request::is('dashboard/data-penduduk') ? 'active' : '' }}"  href="{{ route('dataPendudukAdmin') }}">
                         <div class="sb-nav-link-icon"><i class="bi bi-person-vcard"></i></div>
                         Data Penduduk
+                    </a> --}}
+                    <a class="nav-link collapsed {{ Request::is('dashboard/data-penduduk') ? 'active' : '' }}" href="#" data-bs-toggle="collapse" data-bs-target="#collapseDatapenduduk" aria-expanded="false" aria-controls="collapseDatapenduduk">
+                        <div class="sb-nav-link-icon"><i class="bi bi-person-vcard"></i></i></div>
+                        Data Penduduk
+                        <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
                     </a>
+                    <div class="collapse" id="collapseDatapenduduk" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
+                        <nav class="sb-sidenav-menu-nested nav">
+                            <a class="nav-link {{ Request::is('dashboard/data-penduduk') ? 'active' : '' }}"  href="{{ route('dataPendudukAdmin') }}">Data Penduduk</a>
+                            <a class="nav-link {{ Request::is('dashboard/data-penduduk-per-usia') ? 'active' : '' }}" href="{{ route('dataPendudukPerUsiaAdmin') }}">Data Penduduk Per Usia</a>
+                        </nav>
+                    </div>
                 </div>
             </div>
             <div class="sb-sidenav-footer">

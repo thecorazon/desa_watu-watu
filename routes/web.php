@@ -5,6 +5,7 @@ use App\Http\Controllers\AuthController;
 use App\Http\Controllers\BeritaDesaController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\DataPendudukController;
+use App\Http\Controllers\DataPendudukPerUsiaController;
 use App\Http\Controllers\GaleriDesaController;
 use App\Http\Controllers\KegiatanDesaController;
 use App\Http\Controllers\PetaDesaController;
@@ -127,6 +128,14 @@ Route::post('dashboard/tambah-data-penduduk', [DataPendudukController::class, 's
 Route::get('dashboard/edit-data-penduduk/{id}', [DataPendudukController::class, 'edit'])->middleware('auth')->name('editDataPendudukAdmin');
 Route::post('dashboard/edit-data-penduduk/{id}', [DataPendudukController::class, 'update'])->middleware('auth')->name('editDataPendudukAdmin');
 Route::post('dashboard/hapus-data-penduduk/{id}', [DataPendudukController::class, 'destroy'])->middleware('auth')->name('hapusDataPendudukAdmin');
+
+// Data Penduduk Per Usia
+Route::get('/dashboard/data-penduduk-per-usia', [DataPendudukPerUsiaController::class, 'index'])->middleware('auth')->name('dataPendudukPerUsiaAdmin');
+Route::get('dashboard/tambah-data-penduduk-per-usia', [DataPendudukPerUsiaController::class, 'create'])->middleware('auth')->name('tambahDataPendudukPerUsiaAdmin');
+Route::post('dashboard/tambah-data-penduduk-per-usia', [DataPendudukPerUsiaController::class, 'store'])->middleware('auth')->name('tambahDataPendudukPerUsiaAdmin');
+Route::get('dashboard/edit-data-penduduk-per-usia/{id}', [DataPendudukPerUsiaController::class, 'edit'])->middleware('auth')->name('editDataPendudukPerUsiaAdmin');
+Route::post('dashboard/edit-data-penduduk-per-usia/{id}', [DataPendudukPerUsiaController::class, 'update'])->middleware('auth')->name('editDataPendudukPerUsiaAdmin');
+Route::post('dashboard/hapus-data-penduduk-per-usia/{id}', [DataPendudukPerUsiaController::class, 'destroy'])->middleware('auth')->name('hapusDataPendudukPerUsiaAdmin');
 
 // Generate Sitemap
 Route::get('/genSet', [AppController::class, 'generateSitemap']);
