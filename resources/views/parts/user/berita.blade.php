@@ -1,7 +1,7 @@
 <section id="berita-desa" class="mt-3 mb-3">
     <div class="container">
         <h4 class="text-center fw-bold mt-5">Berita Terkini</h4>
-        <p class="text-center text-berita-1">Berikut ini adalah berita terkini tentang Desa Batursari</p>
+        <p class="text-center text-berita-1">Berikut ini adalah berita terkini tentang Desa Watu-Watu</p>
         
         <div class="row row-cols-1 row-cols-md-3 g-4">
             @if(isset($beritaDesa))

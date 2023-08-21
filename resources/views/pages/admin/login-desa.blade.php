@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Desa Batursari | Login</title>
+    <title>Desa Watu-Watu | Login</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
     <link rel="icon" type="image/x-icon" href="{{ asset('logo_kabupaten_pekalongan.ico') }}">
     <link rel="stylesheet" href="{{ asset('assets/css/login.css') }}">
@@ -21,7 +21,7 @@
                         </div>
                         <div class="card-body">
                             <div class="row justify-content-center">
-                                <img src="{{ asset('assets/images/logo_kabupaten_pekalongan.png') }}" style="width: 100px">
+                                <img src="{{ asset('assets/images/logo_bombana.png') }}" style="width: 100px">
                             </div>
                             @isset($login_error)
                             <div class="alert alert-danger alert-dismissible fade show mt-2 text-center" role="alert">
