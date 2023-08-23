@@ -10,6 +10,15 @@ use Illuminate\Support\Facades\Validator;
 
 class DataPendudukController extends Controller
 {
+
+
+    public function getPopulationByYear($year)
+    {
+        $dataPenduduk = Population::where('year', $year)->first();
+
+        return response()->json($dataPenduduk);
+    }
+
     /**
      * Display a listing of the resource.
      */
@@ -21,6 +30,7 @@ class DataPendudukController extends Controller
             'dataPenduduk' => $data
         ]);
     }
+
 
     /**
      * Show the form for creating a new resource.
