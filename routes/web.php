@@ -121,6 +121,11 @@ Route::post('/dashboard/edit-berita-desa/{id}', [BeritaDesaController::class, 'u
 Route::post('/dashboard/hapus-berita-desa/{id}', [BeritaDesaController::class, 'destroy'])->middleware('auth')->name('hapusBeritaDesaAdmin');
 Route::get('/dashboard/berita-desa/{slug}', [BeritaDesaController::class, 'detail'])->middleware('auth')->name('tampilBeritaDesa');
 
+// Data Penduduk Per Tahun
+// Route::get('/dashboard/data-penduduk', [DataPendudukController::class, 'index'])->middleware('auth')->name('dataPendudukAdmin');
+Route::get('/get-population-by-year/{year}', 'PopulationController@getPopulationByYear');
+
+
 // Data Penduduk
 Route::get('/dashboard/data-penduduk', [DataPendudukController::class, 'index'])->middleware('auth')->name('dataPendudukAdmin');
 Route::get('dashboard/tambah-data-penduduk', [DataPendudukController::class, 'create'])->middleware('auth')->name('tambahDataPendudukAdmin');
