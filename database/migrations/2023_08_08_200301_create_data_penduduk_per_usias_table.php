@@ -13,16 +13,16 @@ return new class extends Migration
     {
         Schema::create('tb_data_penduduk_per_usia', function (Blueprint $table) {
             $table->id();
-            $table->integer('u0-5');
-            $table->integer('u6-9');
-            $table->integer('u10-16');
-            $table->integer('u17-25');
-            $table->integer('u26-30');
-            $table->integer('u31-35');
-            $table->integer('u36-40');
-            $table->integer('u41-45');
-            $table->integer('u46-50');
-            $table->integer('u51-keatas');
+            $table->integer('u0_5');
+            $table->integer('u6_9');
+            $table->integer('u10_16');
+            $table->integer('u17_25');
+            $table->integer('u26_30');
+            $table->integer('u31_35');
+            $table->integer('u36_40');
+            $table->integer('u41_45');
+            $table->integer('u46_50');
+            $table->integer('u51_keatas');
             $table->year('tahun');
             $table->timestamps();
         });

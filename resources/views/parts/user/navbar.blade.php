@@ -12,6 +12,10 @@
                 <li class="nav-item">
                     <a class="nav-link {{ Request::is('/') ? 'active' : '' }}" aria-current="page" href="/">Home</a>
                 </li>
+
+                <li class="nav-item">
+                    <a class="nav-link {{ Request::is('data-penduduk') ? 'active' : '' }}" aria-current="page" href="/data-penduduk">Data Penduduk</a>
+                </li>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle {{ Request::is('profil-desa') ? 'active' : '' }}" role="button" data-bs-toggle="dropdown" aria-expanded="false" href="#">Profil Desa</a>
                     <ul class="dropdown-menu">
