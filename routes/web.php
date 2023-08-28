@@ -23,7 +23,11 @@ Route::get('/', [AppController::class, 'index'])->name('home');
 
 
 // data pendduduk
+
 Route::get('/data-penduduk', [DataPendudukController::class, 'dataPenduduk'])->name("dataPenduduk");
+
+
+Route::post('/data-penduduk', [DataPendudukController::class, 'dataPenduduk'])->name("dataPenduduk");
 
 
 // Profil Desa
@@ -134,10 +138,6 @@ Route::post('/dashboard/edit-berita-desa/{id}', [BeritaDesaController::class, 'u
 Route::post('/dashboard/hapus-berita-desa/{id}', [BeritaDesaController::class, 'destroy'])->middleware('auth')->name('hapusBeritaDesaAdmin');
 Route::get('/dashboard/berita-desa/{slug}', [BeritaDesaController::class, 'detail'])->middleware('auth')->name('tampilBeritaDesa');
 
-// Data Penduduk Per Tahun
-// Route::get('/dashboard/data-penduduk', [DataPendudukController::class, 'index'])->middleware('auth')->name('dataPendudukAdmin');
-Route::get('/get-population-by-year/{year}', 'PopulationController@getPopulationByYear');
-
 
 // Data Penduduk
 Route::get('/dashboard/data-penduduk', [DataPendudukController::class, 'index'])->middleware('auth')->name('dataPendudukAdmin');
@@ -154,6 +154,10 @@ Route::post('dashboard/tambah-data-penduduk-per-usia', [DataPendudukPerUsiaContr
 Route::get('dashboard/edit-data-penduduk-per-usia/{id}', [DataPendudukPerUsiaController::class, 'edit'])->middleware('auth')->name('editDataPendudukPerUsiaAdmin');
 Route::post('dashboard/edit-data-penduduk-per-usia/{id}', [DataPendudukPerUsiaController::class, 'update'])->middleware('auth')->name('editDataPendudukPerUsiaAdmin');
 Route::post('dashboard/hapus-data-penduduk-per-usia/{id}', [DataPendudukPerUsiaController::class, 'destroy'])->middleware('auth')->name('hapusDataPendudukPerUsiaAdmin');
+
+
+
+// Route::get('/data-by-year/{year}', 'DataPendudukController@showByYear');
 
 // Generate Sitemap
 Route::get('/genSet', [AppController::class, 'generateSitemap']);
