@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\DataPenduduk;
 use App\Http\Requests\StoreDataPendudukRequest;
 use App\Http\Requests\UpdateDataPendudukRequest;
+use App\Models\DataPendudukPerUsia;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\Validator;
 
@@ -12,12 +13,30 @@ class DataPendudukController extends Controller
 {
 
 
-    public function getPopulationByYear($year)
-    {
-        $dataPenduduk = Population::where('year', $year)->first();
 
-        return response()->json($dataPenduduk);
+    public function dataPenduduk()
+    {
+     
+        $tahun = date("Y");
+
+
+        $data =  $_GET['data'] ?? $tahun; 
+       
+        $dataPenduduk = DataPenduduk::latest()->firstWhere("tahun", $data);
+        $date = DataPenduduk::all();
+        $dataPendudukPerusia = DataPendudukPerUsia::latest()->firstWhere("tahun", $data);
+
+        return view("pages.user.data-penduduk")->with([
+            'dataPenduduk' => $dataPenduduk,
+            'dataPedudukPerusia' => $dataPendudukPerusia,
+            'date' => $date
+
+        ]);
+
+
     }
+
+
 
     /**
      * Display a listing of the resource.
@@ -25,10 +44,16 @@ class DataPendudukController extends Controller
     public function index()
     {
         $data = DataPenduduk::all();
+        $dataPendudukPerusia = DataPendudukPerUsia::all();
 
-        return view('pages.admin.data-penduduk')->with([
-            'dataPenduduk' => $data
+        return view("pages.admin.data-penduduk", [
+            'dataPenduduk' => $data,
+            'dataPendudukPerusia' => $dataPendudukPerusia
         ]);
+
+        // return view('pages.admin.data-penduduk')->with([
+           
+        // ]);
     }
 
 

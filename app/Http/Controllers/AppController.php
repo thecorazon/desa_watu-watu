@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\BeritaDesa;
 use App\Models\DataPenduduk;
+use App\Models\DataPendudukPerUsia;
 use App\Models\GaleriDesa;
 use App\Models\ProfilDesa;
 use App\Models\KegiatanDesa;
@@ -18,14 +19,13 @@ class AppController extends Controller
         $dataKegiatan = KegiatanDesa::all();
         $dataProfilDesa = ProfilDesa::first();
         $dataBeritaDesa = BeritaDesa::latest()->get();
-        $dataPenduduk = DataPenduduk::latest()->first();
-
+        
         return view('pages.user.home')->with([
             'profilDesa' => $dataProfilDesa,
             'galeri' => $dataGaleri,
             'kegiatan' => $dataKegiatan,
             'beritaDesa' => $dataBeritaDesa,
-            'dataPenduduk' => $dataPenduduk
+
         ]);
     }
 
@@ -50,7 +50,7 @@ class AppController extends Controller
         return view('pages.user.profil-desa.visimisi-desa', [
             'title' => 'profil-desa',
             'title2' => 'visi-misi-desa'
-        ]); 
+        ]);
     }
 
     public function strukturOrganisasi()
@@ -58,7 +58,7 @@ class AppController extends Controller
         return view('pages.user.profil-desa.struktur-organisasi', [
             'title' => 'profil-desa',
             'title2' => 'struktur-organisasi'
-        ]); 
+        ]);
     }
 
     public function profilKepalaDesa()
@@ -66,7 +66,7 @@ class AppController extends Controller
         return view('pages.user.profil-desa.profil-kepala-desa', [
             'title' => 'profil-desa',
             'title2' => 'profil-kepala-desa'
-        ]); 
+        ]);
     }
 
     public function profilPerangkatDesa()
@@ -74,7 +74,7 @@ class AppController extends Controller
         return view('pages.user.profil-desa.profil-perangkat-desa', [
             'title' => 'profil-desa',
             'title2' => 'profil-kepala-desa'
-        ]); 
+        ]);
     }
 
     public function petaDesa()
@@ -82,7 +82,7 @@ class AppController extends Controller
         return view('pages.user.profil-desa.peta-desa', [
             'title' => 'profil-desa',
             'title2' => 'peta-desa'
-        ]); 
+        ]);
     }
 
     public function beritaDesa()
@@ -92,7 +92,7 @@ class AppController extends Controller
             'title2' => ''
         ]);
     }
-    
+
     public function kontak()
     {
         return view('pages.user.kontak', [

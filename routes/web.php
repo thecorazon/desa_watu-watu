@@ -15,10 +15,16 @@ use App\Http\Controllers\ProfilPerangkatDesaController;
 use App\Http\Controllers\SejarahDesaController;
 use App\Http\Controllers\StrukturOrganisasiController;
 use App\Http\Controllers\VisiMisiController;
+use App\Models\DataPenduduk;
 use Illuminate\Support\Facades\Route;
 
 // Home
 Route::get('/', [AppController::class, 'index'])->name('home');
+
+
+// data pendduduk
+Route::get('/data-penduduk', [DataPendudukController::class, 'dataPenduduk'])->name("dataPenduduk");
+
 
 // Profil Desa
 Route::get('/profil-desa', [ProfilDesaController::class, 'show'])->name('profilDesa');
@@ -59,6 +65,13 @@ Route::get('/kegiatan-desa', [KegiatanDesaController::class, 'show'])->name('keg
 Route::get('/login', [AuthController::class, 'index'])->middleware('guest')->name('login');
 Route::post('/login', [AuthController::class, 'authenticate'])->name('auth');
 Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
+
+// data penduduk users
+
+
+
+
+
 
 // Dashboard Admin
 Route::get('/dashboard', [DashboardController::class, 'index'])->middleware('auth')->name('dashboard');
