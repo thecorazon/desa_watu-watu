@@ -1,7 +1,7 @@
 
 
-<section id="berita-desa" class="mt-3 mb-5">
-    <div class="container">
+<section id="berita-desa">
+    <div class="container my-5">
         <div class="row text-center mt-4 mt-md-5" id="penduduk_data">
             <h4 class="text-center fw-bold mt-5">Data Kependudukan Desa Watu-Watu</h4>
         <h5 class="text-center fw-bold">Tahun {{ $dataPenduduk->tahun ??  date('Y') }}</h5>

@@ -155,15 +155,5 @@ Route::get('dashboard/edit-data-penduduk-per-usia/{id}', [DataPendudukPerUsiaCon
 Route::post('dashboard/edit-data-penduduk-per-usia/{id}', [DataPendudukPerUsiaController::class, 'update'])->middleware('auth')->name('editDataPendudukPerUsiaAdmin');
 Route::post('dashboard/hapus-data-penduduk-per-usia/{id}', [DataPendudukPerUsiaController::class, 'destroy'])->middleware('auth')->name('hapusDataPendudukPerUsiaAdmin');
 
-Route::post('/get-penduduk-data/{year}', function (Request $request, $year) {
-    // Di sini kamu perlu mengambil data penduduk berdasarkan tahun yang dipilih
-    // Gantikan dengan logika pengambilan data yang sesuai di model atau controller
-    $dataPenduduk = getDataPendudukByYear($year);
-
-    return response()->json($dataPenduduk);
-});
-
-// Route::get('/data-by-year/{year}', 'DataPendudukController@showByYear');
-
 // Generate Sitemap
 Route::get('/genSet', [AppController::class, 'generateSitemap']);

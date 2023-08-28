@@ -7,17 +7,18 @@
 @section('title', 'Desa Watu-Watu | Data Penduduk Desa')
 
 @section('content')
-<section id="data-penduduk" class="mt-3 mb-5">
+<section id="data-penduduk">
     <div class="container">
+        <br>    
         <form action="{{ route('dataPenduduk') }}" method="post">
             @csrf
-            <div class="row mx-0">
-                <div class="col-3 offset-4 me-0">
+            <div class="row justify-content-center align-items-center">
+                <div class="col-lg-2 col-md-3 col-4 px-0 offset-1">
 
-                    <select name="data" id="" class="form-control">
+                    <select name="data" id="" class="form-control border border-primary">
 
                         @foreach ($date as $data)
-                        <option class="form-control" value="{{ $data->tahun ?? date('Y') }}" {{($dataPenduduk->tahun ?? date('Y')) == $data->tahun ? "selected" : ""}}>Tahun {{ $data->tahun }}</option>
+                        <option align="center" class="form-control" value="{{ $data->tahun ?? date('Y') }}" {{($dataPenduduk->tahun ?? date('Y')) == $data->tahun ? "selected" : ""}}>Tahun {{ $data->tahun }}</option>
                         @endforeach
                     </select>
                 </div>
@@ -33,41 +34,40 @@
 
             <div class="row text-center mt-4 mt-md-5">
                 <div class="col-lg-8 col-md-12 mt-4"> 
-                    <h5 class="mb-5"><b>Data Penduduk Per Usia</b></h5>
-
-                    <div class="row">
+                    <h5 class="mb-4 "><b>Jumlah Penduduk</b></h5>
+                    <div class="row px-5 mx-4 py-5 border border-success mb-5 rounded-circle">
                         <div class="col-4 mt-3 mt-md-0">
-                            <img src="{{ asset('assets/images/penduduk.png') }}" alt="" width="100">
-                            <h5 class="mt-2">Total Penduduk
+                            <img src="{{ asset('assets/images/penduduk.png') }}" alt="" width="80">
+                            <h6 class="mt-2">Total Penduduk
                                 @if (isset($dataPenduduk))
                                 {{ $dataPenduduk->jumlah_penduduk }}
                                 @else
                                 0
                                 @endif Jiwa
-                            </h5>
+                            </h6>
                         </div>
                         <div class="col-4 mt-3 mt-md-0">
-                            <img src="{{ asset('assets/images/laki-laki.png') }}" alt="" width="100">
-                            <h5 class="mt-2">Total Laki Laki @if (isset($dataPenduduk))
+                            <img src="{{ asset('assets/images/laki-laki.png') }}" alt="" width="80">
+                            <h6 class="mt-2">Total Laki Laki @if (isset($dataPenduduk))
                                 {{ $dataPenduduk->jumlah_laki_laki }}
                                 @else
                                 0
-                            @endif Jiwa</h5>
+                            @endif Jiwa</h6>
                         </div>
                         <div class="col-4 mt-3 mt-md-0">
-                            <img src="{{ asset('assets/images/perempuan.png') }}" alt="" width="100">
-                            <h5 class="mt-2">Total Perempuan @if (isset($dataPenduduk))
+                            <img src="{{ asset('assets/images/perempuan.png') }}" alt="" width="80">
+                            <h6 class="mt-2">Total Perempuan @if (isset($dataPenduduk))
                                 {{ $dataPenduduk->jumlah_perempuan }}
                                 @else
                                 0
-                            @endif Jiwa</h5>
+                            @endif Jiwa</h6>
                         </div>
 
 
 
                     </div>
                 </div>
-                <div class="col-lg-4 col-md-12  mt-4"> 
+                <div class="col-lg-4 col-md-10 offset-lg-0 offset-md-1 mt-4"> 
                     <h5 class="mb-4"><b>Data Penduduk Per Usia</b></h5>
                     <table class="table table-bordered border-primary" align="center"> 
                         <tr>
