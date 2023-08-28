@@ -66,6 +66,12 @@ class DataPendudukController extends Controller
     {
         //
     }
+    public function showByYear($year)
+    {
+    // Ambil data dari basis data berdasarkan tahun
+        $data = DataPenduduk::whereYear('tahun', $year)->get();
+        return response()->json($data);
+    }
 
     /**
      * Show the form for editing the specified resource.

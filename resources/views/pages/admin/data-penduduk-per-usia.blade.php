@@ -30,7 +30,7 @@
     <div class="card-body">
         <div class="row">
             <div class="col-md-12">
-                <table id="tb-data-penduduk-per-usia" class="table" style="width: 100%">
+                <table id="tb-data-penduduk" class="table" style="width: 100%">
                     <thead>
                         <tr>
                             <th>Tahun</th>
