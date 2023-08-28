@@ -23,7 +23,7 @@
         @include('parts.user.slides')
         @include('parts.user.welcome')
         @include('parts.user.berita')
-        {{-- @include('parts.user.galeri') --}}
+        @include('parts.user.galeri')
         @include('parts.user.kegiatan-desa')
         @endif
     </div>
