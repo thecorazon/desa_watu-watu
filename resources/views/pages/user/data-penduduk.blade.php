@@ -2,249 +2,123 @@
 
 @section('meta-description', 'Data Penduduk Desa Watu-Watu')
 
-@section('meta-keywords', 'Berita, Watu-Watu, Desa, Lantari Jaya, Bombana, Kabupaten Bombana, Kecamatan Lantari Jaya')
+@section('meta-keywords', 'Data Penduduk, Watu-Watu, Desa, Lantari Jaya, Bombana, Kabupaten Bombana, Kecamatan Lantari Jaya')
 
-@section('title', 'Desa Watu-Watu | Berita Desa')
+@section('title', 'Desa Watu-Watu | Data Penduduk Desa')
 
 @section('content')
-<section id="berita-desa" class="mt-3 mb-5">
+<section id="data-penduduk" class="mt-3 mb-5">
     <div class="container">
-        <h4 class="text-center fw-bold mt-5">Data Kependudukan Desa Watu-Watu</h4>
+        <form action="{{ route('dataPenduduk') }}" method="post">
+            @csrf
+            <div class="row mx-0">
+                <div class="col-3 offset-4 me-0">
 
-        <form action="{{ route('dataPenduduk') }}" method="get">
+                    <select name="data" id="" class="form-control">
 
-            <select name="data" id="">
-                @foreach ($date as $data)
-                    <option value="{{ $data->tahun }}">{{ $data->tahun }}</option>
-                @endforeach
-            </select>
-            <button>cari</button>
+                        @foreach ($date as $data)
+                        <option class="form-control" value="{{ $data->tahun ?? date('Y') }}" {{($dataPenduduk->tahun ?? date('Y')) == $data->tahun ? "selected" : ""}}>Tahun {{ $data->tahun }}</option>
+                        @endforeach
+                    </select>
+                </div>
+                <div class="col-2 mx-0">
+                    <button class="btn btn-outline-primary">Lihat</button>
+                </div>
+            </div>
 
 
         </form>
+        <h4 class="text-center fw-bold mt-5">Data Kependudukan Desa Watu-Watu</h4>
+        <h5 class="text-center fw-bold">Tahun {{ $dataPenduduk->tahun ?? date('Y')}}</h5>
 
-        <div class="row text-center mt-4 mt-md-5">
-            <div class="col-md-4 mt-3 mt-md-0">
-                <img src="{{ asset('assets/images/penduduk.png') }}" alt="">
-                <h5 class="mt-2">Total Penduduk
-                    @if (isset($dataPenduduk))
-                        {{ $dataPenduduk->jumlah_penduduk }}
-                    @else
-                        0
-                    @endif Jiwa
-                </h5>
+            <div class="row text-center mt-4 mt-md-5">
+                <div class="col-lg-8 col-md-12 mt-4"> 
+                    <h5 class="mb-5"><b>Data Penduduk Per Usia</b></h5>
+
+                    <div class="row">
+                        <div class="col-4 mt-3 mt-md-0">
+                            <img src="{{ asset('assets/images/penduduk.png') }}" alt="" width="100">
+                            <h5 class="mt-2">Total Penduduk
+                                @if (isset($dataPenduduk))
+                                {{ $dataPenduduk->jumlah_penduduk }}
+                                @else
+                                0
+                                @endif Jiwa
+                            </h5>
+                        </div>
+                        <div class="col-4 mt-3 mt-md-0">
+                            <img src="{{ asset('assets/images/laki-laki.png') }}" alt="" width="100">
+                            <h5 class="mt-2">Total Laki Laki @if (isset($dataPenduduk))
+                                {{ $dataPenduduk->jumlah_laki_laki }}
+                                @else
+                                0
+                            @endif Jiwa</h5>
+                        </div>
+                        <div class="col-4 mt-3 mt-md-0">
+                            <img src="{{ asset('assets/images/perempuan.png') }}" alt="" width="100">
+                            <h5 class="mt-2">Total Perempuan @if (isset($dataPenduduk))
+                                {{ $dataPenduduk->jumlah_perempuan }}
+                                @else
+                                0
+                            @endif Jiwa</h5>
+                        </div>
+
+
+
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-12  mt-4"> 
+                    <h5 class="mb-4"><b>Data Penduduk Per Usia</b></h5>
+                    <table class="table table-bordered border-primary" align="center"> 
+                        <tr>
+                            <td>Usia 0 - 5</td>
+                            <td>{{ $dataPendudukPerusia->u0_5  ?? "" }}</td>
+                        </tr>
+                        <tr>
+                            <td>Usia 6 - 9</td>
+                            <td>{{ $dataPendudukPerusia->u6_9 ?? "" }}</td>
+                        </tr>
+                        <tr>
+                            <td>Usia 10 - 16</td>
+                            <td>{{ $dataPendudukPerusia->u10_16 ?? "" }}</td>
+                        </tr>
+                        <tr>
+                            <td>Usia 17 - 25</td>
+                            <td>{{ $dataPendudukPerusia->u17_25 ?? "" }}</td>
+                        </tr>
+                        <tr>
+                            <td>Usia 26 - 30</td>
+                            <td>{{ $dataPendudukPerusia->u26_30 ?? "" }}</td>
+                        </tr>
+                        <tr>
+                            <td>Usia 31 - 35</td>
+                            <td>{{ $dataPendudukPerusia->u31_35 ?? "" }}</td>
+                        </tr>
+                        <tr>
+                            <td>Usia 36 - 40</td>
+                            <td>{{ $dataPendudukPerusia->u36_40 ?? "" }}</td>
+                        </tr>
+                        <tr>
+                            <td>Usia 41 - 45</td>
+                            <td>{{ $dataPendudukPerusia->u41_45 ?? "" }}</td>
+                        </tr>
+                        <tr>
+                            <td>Usia 46 - 50</td>
+                            <td>{{ $dataPendudukPerusia->u46_50 ?? "" }}</td>
+                        </tr>
+                        <tr>
+                            <td>Usia 51 - keatas</td>
+                            <td>{{ $dataPendudukPerusia->u51_keatas ?? "" }}</td>
+                        </tr>
+                    </table>    
+                </div>  
             </div>
-            <div class="col-md-4 mt-3 mt-md-0">
-                <img src="{{ asset('assets/images/laki-laki.png') }}" alt="">
-                <h5 class="mt-2">Total Laki Laki @if (isset($dataPenduduk))
-                        {{ $dataPenduduk->jumlah_laki_laki }}
-                    @else
-                        0
-                    @endif Jiwa</h5>
-            </div>
-            <div class="col-md-4 mt-3 mt-md-0">
-                <img src="{{ asset('assets/images/perempuan.png') }}" alt="">
-                <h5 class="mt-2">Total Perempuan @if (isset($dataPenduduk))
-                        {{ $dataPenduduk->jumlah_perempuan }}
-                    @else
-                        0
-                    @endif Jiwa</h5>
-            </div>
+
 
 
 
 
         </div>
-
-        {{-- {{ $dataPenduduk }} --}}
-
-
-
-        {{-- {{ $dataPedudukPerusia }} --}}
-
-
-
-
-
-        {{-- table untuk perusia --}}
-        {{-- <div class="card mt-5">
-        <h5 class="card-header">Bordered Table</h5>
-        <div class="card-body">
-            <div class="table-responsive text-nowrap">
-                <table class="table table-bordered">
-                    <thead>
-                        <tr>
-                            <th>Project</th>
-                            <th>Client</th>
-                            <th>Users</th>
-                            <th>Status</th>
-                            <th>Actions</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>
-                                <i class="fab fa-angular fa-lg text-danger me-3"></i> <strong>Angular
-                                    Project</strong>
-                            </td>
-                            <td>Albert Cook</td>
-                            <td>
-                                <ul class="list-unstyled users-list m-0 avatar-group d-flex align-items-center">
-                                    <li data-bs-toggle="tooltip" data-popup="tooltip-custom" data-bs-placement="top"
-                                        class="avatar avatar-xs pull-up" title="Lilian Fuller">
-                                       
-
-                                    </li>
-                                    <li data-bs-toggle="tooltip" data-popup="tooltip-custom" data-bs-placement="top"
-                                        class="avatar avatar-xs pull-up" title="Sophia Wilkerson">
-                                        
-                                    </li>
-                                    <li data-bs-toggle="tooltip" data-popup="tooltip-custom" data-bs-placement="top"
-                                        class="avatar avatar-xs pull-up" title="Christina Parker">
-                                        
-                                    </li>
-                                </ul>
-                            </td>
-                            <td><span class="badge bg-label-primary me-1">Active</span></td>
-                            <td>
-                                <div class="dropdown">
-                                    <button type="button" class="btn p-0 dropdown-toggle hide-arrow"
-                                        data-bs-toggle="dropdown">
-                                        <i class="bx bx-dots-vertical-rounded"></i>
-                                    </button>
-                                    <div class="dropdown-menu">
-                                        <a class="dropdown-item" href="javascript:void(0);"><i
-                                                class="bx bx-edit-alt me-1"></i> Edit</a>
-                                        <a class="dropdown-item" href="javascript:void(0);"><i
-                                                class="bx bx-trash me-1"></i> Delete</a>
-                                    </div>
-                                </div>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td><i class="fab fa-react fa-lg text-info me-3"></i> <strong>React Project</strong>
-                            </td>
-                            <td>Barry Hunter</td>
-                            <td>
-                                <ul class="list-unstyled users-list m-0 avatar-group d-flex align-items-center">
-                                    <li data-bs-toggle="tooltip" data-popup="tooltip-custom" data-bs-placement="top"
-                                        class="avatar avatar-xs pull-up" title="Lilian Fuller">
-                                        
-                                    </li>
-                                    <li data-bs-toggle="tooltip" data-popup="tooltip-custom" data-bs-placement="top"
-                                        class="avatar avatar-xs pull-up" title="Sophia Wilkerson">
-                                        
-                                    </li>
-                                    <li data-bs-toggle="tooltip" data-popup="tooltip-custom" data-bs-placement="top"
-                                        class="avatar avatar-xs pull-up" title="Christina Parker">
-                                        
-                                    </li>
-                                </ul>
-                            </td>
-                            <td><span class="badge bg-label-success me-1">Completed</span></td>
-                            <td>
-                                <div class="dropdown">
-                                    <button type="button" class="btn p-0 dropdown-toggle hide-arrow"
-                                        data-bs-toggle="dropdown">
-                                        <i class="bx bx-dots-vertical-rounded"></i>
-                                    </button>
-                                    <div class="dropdown-menu">
-                                        <a class="dropdown-item" href="javascript:void(0);"><i
-                                                class="bx bx-edit-alt me-1"></i> Edit</a>
-                                        <a class="dropdown-item" href="javascript:void(0);"><i
-                                                class="bx bx-trash me-1"></i> Delete</a>
-                                    </div>
-                                </div>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td><i class="fab fa-vuejs fa-lg text-success me-3"></i> <strong>VueJs Project</strong>
-                            </td>
-                            <td>Trevor Baker</td>
-                            <td>
-                                <ul class="list-unstyled users-list m-0 avatar-group d-flex align-items-center">
-                                    <li data-bs-toggle="tooltip" data-popup="tooltip-custom"
-                                        data-bs-placement="top" class="avatar avatar-xs pull-up"
-                                        title="Lilian Fuller">
-                                        
-                                    </li>
-                                    <li data-bs-toggle="tooltip" data-popup="tooltip-custom"
-                                        data-bs-placement="top" class="avatar avatar-xs pull-up"
-                                        title="Sophia Wilkerson">
-                                        
-                                    </li>
-                                    <li data-bs-toggle="tooltip" data-popup="tooltip-custom"
-                                        data-bs-placement="top" class="avatar avatar-xs pull-up"
-                                        title="Christina Parker">
-                                        
-                                    </li>
-                                </ul>
-                            </td>
-                            <td><span class="badge bg-label-info me-1">Scheduled</span></td>
-                            <td>
-                                <div class="dropdown">
-                                    <button type="button" class="btn p-0 dropdown-toggle hide-arrow"
-                                        data-bs-toggle="dropdown">
-                                        <i class="bx bx-dots-vertical-rounded"></i>
-                                    </button>
-                                    <div class="dropdown-menu">
-                                        <a class="dropdown-item" href="javascript:void(0);"><i
-                                                class="bx bx-edit-alt me-1"></i> Edit</a>
-                                        <a class="dropdown-item" href="javascript:void(0);"><i
-                                                class="bx bx-trash me-1"></i> Delete</a>
-                                    </div>
-                                </div>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <i class="fab fa-bootstrap fa-lg text-primary me-3"></i> <strong>Bootstrap
-                                    Project</strong>
-                            </td>
-                            <td>Jerry Milton</td>
-                            <td>
-                                <ul class="list-unstyled users-list m-0 avatar-group d-flex align-items-center">
-                                    <li data-bs-toggle="tooltip" data-popup="tooltip-custom"
-                                        data-bs-placement="top" class="avatar avatar-xs pull-up"
-                                        title="Lilian Fuller">
-                                       
-                                    </li>
-                                    <li data-bs-toggle="tooltip" data-popup="tooltip-custom"
-                                        data-bs-placement="top" class="avatar avatar-xs pull-up"
-                                        title="Sophia Wilkerson">
-                                        
-                                    </li>
-                                    <li data-bs-toggle="tooltip" data-popup="tooltip-custom"
-                                        data-bs-placement="top" class="avatar avatar-xs pull-up"
-                                        title="Christina Parker">
-                                       
-                                    </li>
-                                </ul>
-                            </td>
-                            <td><span class="badge bg-label-warning me-1">Pending</span></td>
-                            <td>
-                                <div class="dropdown">
-                                    <button type="button" class="btn p-0 dropdown-toggle hide-arrow"
-                                        data-bs-toggle="dropdown">
-                                        <i class="bx bx-dots-vertical-rounded"></i>
-                                    </button>
-                                    <div class="dropdown-menu">
-                                        <a class="dropdown-item" href="javascript:void(0);"><i
-                                                class="bx bx-edit-alt me-1"></i> Edit</a>
-                                        <a class="dropdown-item" href="javascript:void(0);"><i
-                                                class="bx bx-trash me-1"></i> Delete</a>
-                                    </div>
-                                </div>
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-        </div>
-    </div> --}}
-
-        {{-- @dd($dataPenduduk); --}}
-    </div>
-</section>
-@endsection
+    </section>
+    @endsection
 

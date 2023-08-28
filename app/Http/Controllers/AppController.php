@@ -13,17 +13,20 @@ use Illuminate\Support\Facades\Artisan;
 
 class AppController extends Controller
 {
-    public function index(Request $request, $tahun)
-    {
+    public function index()
+    {   
+        $tahun = date("Y");
         $dataGaleri = GaleriDesa::all();
         $dataKegiatan = KegiatanDesa::all();
         $dataProfilDesa = ProfilDesa::first();
         $dataBeritaDesa = BeritaDesa::latest()->get();
+        $dataPenduduk = DataPenduduk::latest()->firstWhere("tahun", $tahun);
         return view('pages.user.home')->with([
             'profilDesa' => $dataProfilDesa,
             'galeri' => $dataGaleri,
             'kegiatan' => $dataKegiatan,
             'beritaDesa' => $dataBeritaDesa,
+            'dataPenduduk' => $dataPenduduk
 
         ]);
     }

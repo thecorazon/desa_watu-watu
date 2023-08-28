@@ -23,7 +23,11 @@ Route::get('/', [AppController::class, 'index'])->name('home');
 
 
 // data pendduduk
+
 Route::get('/data-penduduk', [DataPendudukController::class, 'dataPenduduk'])->name("dataPenduduk");
+
+
+Route::post('/data-penduduk', [DataPendudukController::class, 'dataPenduduk'])->name("dataPenduduk");
 
 
 // Profil Desa

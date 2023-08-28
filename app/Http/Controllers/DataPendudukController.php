@@ -20,7 +20,7 @@ class DataPendudukController extends Controller
         $tahun = date("Y");
 
 
-        $data =  $_GET['data'] ?? $tahun; 
+        $data =  $_POST['data'] ?? $tahun; 
        
         $dataPenduduk = DataPenduduk::latest()->firstWhere("tahun", $data);
         $date = DataPenduduk::all();
@@ -28,7 +28,7 @@ class DataPendudukController extends Controller
 
         return view("pages.user.data-penduduk")->with([
             'dataPenduduk' => $dataPenduduk,
-            'dataPedudukPerusia' => $dataPendudukPerusia,
+            'dataPendudukPerusia' => $dataPendudukPerusia,
             'date' => $date
 
         ]);

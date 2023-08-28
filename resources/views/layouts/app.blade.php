@@ -25,6 +25,7 @@
         @include('parts.user.berita')
         {{-- @include('parts.user.galeri') --}}
         @include('parts.user.kegiatan-desa')
+        @include('parts.user.data-penduduk')
         @endif
     </div>
 
