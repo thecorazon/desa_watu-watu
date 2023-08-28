@@ -3,10 +3,10 @@
         <div class="row">
             <div class="col-md-4">
                 <div class="footer-desa-info d-flex">
-                    <img src="{{ asset('assets/images/logo_kabupaten_pekalongan.png') }}" width="33" alt="">
+                    <img src="{{ asset('assets/images/logo_bombana.png') }}" width="33" alt="">
                     <h6 class="text-white ms-2 mt-3">DESA Watu-Watu</h6>
                 </div>
-                <p class="text-white mt-2 footer-text">Website Desa Watu-Watu, Kecamatan Talun, Kabupaten Pekalongan</p>
+                <p class="text-white mt-2 footer-text">Website Desa Watu-Watu, Kecamatan Lantari Jaya, Kabupaten Bombana, Sulawesi Tenggara.</p>
             </div>
             <div class="col-md-4">
                 <div class="footer-desa-kontak d-flex">
