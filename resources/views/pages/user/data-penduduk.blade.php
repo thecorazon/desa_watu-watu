@@ -30,7 +30,7 @@
 
         </form>
         <h4 class="text-center fw-bold mt-5">Data Kependudukan Desa Watu-Watu</h4>
-        <h5 class="text-center fw-bold">Tahun {{ $dataPenduduk->tahun ?? date('Y')}}</h5>
+        <h3 class="text-center fw-bold">Tahun {{ $dataPenduduk->tahun ?? date('Y')}}</h3>
 
             <div class="row text-center mt-4 mt-md-5">
                 <div class="col-lg-8 col-md-12 mt-4"> 

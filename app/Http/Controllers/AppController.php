@@ -8,6 +8,7 @@ use App\Models\DataPendudukPerUsia;
 use App\Models\GaleriDesa;
 use App\Models\ProfilDesa;
 use App\Models\KegiatanDesa;
+use App\Models\Kontak;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Artisan;
 
@@ -18,6 +19,7 @@ class AppController extends Controller
         $tahun = date("Y");
         $dataGaleri = GaleriDesa::all();
         $dataKegiatan = KegiatanDesa::all();
+        $dataProfilDesa = ProfilDesa::first();
         $dataProfilDesa = ProfilDesa::first();
         $dataBeritaDesa = BeritaDesa::latest()->get();
         $dataPenduduk = DataPenduduk::latest()->firstWhere("tahun", $tahun);
@@ -97,9 +99,11 @@ class AppController extends Controller
 
     public function kontak()
     {
+        $dataKontak = Kontak::first();
         return view('pages.user.kontak', [
             'title' => 'kontak',
-            'title2' => ''
+            'title2' => '',
+            'dataKontak' => $dataKontak
         ]);
     }
 

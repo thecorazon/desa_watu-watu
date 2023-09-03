@@ -52,6 +52,11 @@
                             <a class="nav-link {{ Request::is('dashboard/data-penduduk-per-usia') ? 'active' : '' }}" href="{{ route('dataPendudukPerUsiaAdmin') }}">Data Penduduk Per Usia</a>
                         </nav>
                     </div>
+
+                    <a class="nav-link {{ Request::is('dashboard/kontak') ? 'active' : '' }}" href="{{ route('kontakAdmin') }}">
+                        <div class="sb-nav-link-icon"><i class="bi bi-person"></i></div>
+                        Kontak
+                    </a>
                 </div>
             </div>
             <div class="sb-sidenav-footer">

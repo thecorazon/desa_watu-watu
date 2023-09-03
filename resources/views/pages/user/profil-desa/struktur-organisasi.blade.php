@@ -8,11 +8,11 @@
 
 @section('content')
 
-<h4 class="fw-bold">STRUKTUR ORGANISASI PEMERINTAHAN DESA Watu-Watu</h4>
+<h4 class="fw-bold mb-5" align="center">STRUKTUR ORGANISASI PEMERINTAHAN DESA Watu-Watu</h4>
 
 @if(isset($dataStrukturOrganisasi))
     <div class="text-center mt-4">
-        <img src="{{ asset('img-struktur-organisasi/' . $dataStrukturOrganisasi->img_struktur_organisasi) }}" alt="" width="100%">
+        <img src="{{ asset('img-struktur-organisasi/' . $dataStrukturOrganisasi->img_struktur_organisasi) }}" alt="" width="75%">
     </div>
 @else
     <div style="margin-bottom: 100vh"></div>

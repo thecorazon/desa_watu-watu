@@ -15,6 +15,7 @@ use App\Http\Controllers\ProfilPerangkatDesaController;
 use App\Http\Controllers\SejarahDesaController;
 use App\Http\Controllers\StrukturOrganisasiController;
 use App\Http\Controllers\VisiMisiController;
+use App\Http\Controllers\KontakController;
 use App\Models\DataPenduduk;
 use Illuminate\Support\Facades\Route;
 
@@ -154,6 +155,12 @@ Route::post('dashboard/tambah-data-penduduk-per-usia', [DataPendudukPerUsiaContr
 Route::get('dashboard/edit-data-penduduk-per-usia/{id}', [DataPendudukPerUsiaController::class, 'edit'])->middleware('auth')->name('editDataPendudukPerUsiaAdmin');
 Route::post('dashboard/edit-data-penduduk-per-usia/{id}', [DataPendudukPerUsiaController::class, 'update'])->middleware('auth')->name('editDataPendudukPerUsiaAdmin');
 Route::post('dashboard/hapus-data-penduduk-per-usia/{id}', [DataPendudukPerUsiaController::class, 'destroy'])->middleware('auth')->name('hapusDataPendudukPerUsiaAdmin');
+
+
+// Kontak Admin
+Route::get('/dashboard/kontak', [KontakController::class, 'index'])->middleware('auth')->name('kontakAdmin');
+Route::post('/dashboard/kontakAdmin', [KontakController::class, 'update'])->middleware('auth')->name('editKontak');
+
 
 // Generate Sitemap
 Route::get('/genSet', [AppController::class, 'generateSitemap']);
