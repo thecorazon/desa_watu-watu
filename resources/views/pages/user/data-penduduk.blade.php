@@ -12,8 +12,8 @@
         <br>    
         <form action="{{ route('dataPenduduk') }}" method="post">
             @csrf
-            <div class="row justify-content-center align-items-center">
-                <div class="col-lg-2 col-md-3 col-4 px-0 offset-1">
+            <div class="row justify-content-center align-items-center" data-aos="flip-right" data-aos-duration="1000">
+                <div class="col-lg-2 col-md-3 col-5 px-0 offset-1">
 
                     <select name="data" id="" class="form-control border border-primary">
 
@@ -29,13 +29,13 @@
 
 
         </form>
-        <h4 class="text-center fw-bold mt-5">Data Kependudukan Desa Watu-Watu</h4>
-        <h3 class="text-center fw-bold">Tahun {{ $dataPenduduk->tahun ?? date('Y')}}</h3>
+        <h4 class="text-center fw-bold mt-5" data-aos="fade-up" data-aos-duration="1500">Data Kependudukan Desa Watu-Watu</h4>
+        <h3 class="text-center fw-bold" data-aos="fade-up" data-aos-duration="1500">Tahun {{ $dataPenduduk->tahun ?? date('Y')}}</h3>
 
             <div class="row text-center mt-4 mt-md-5">
-                <div class="col-lg-8 col-md-12 mt-4"> 
+                <div class="col-lg-8 col-md-12 mt-4" data-aos="fade-right" data-aos-duration="1500"> 
                     <h5 class="mb-4 "><b>Jumlah Penduduk</b></h5>
-                    <div class="row px-5 mx-4 py-5 border border-success mb-5 rounded-circle">
+                    <div class="row px-5 mx-4 py-5 border border-success mb-5">
                         <div class="col-4 mt-3 mt-md-0">
                             <img src="{{ asset('assets/images/penduduk.png') }}" alt="" width="80">
                             <h6 class="mt-2">Total Penduduk
@@ -67,7 +67,7 @@
 
                     </div>
                 </div>
-                <div class="col-lg-4 col-md-10 offset-lg-0 offset-md-1 mt-4"> 
+                <div class="col-lg-4 col-md-10 offset-lg-0 offset-md-1 mt-4" data-aos="fade-left" data-aos-duration="1500"> 
                     <h5 class="mb-4"><b>Data Penduduk Per Usia</b></h5>
                     <table class="table table-bordered border-primary" align="center"> 
                         <tr>

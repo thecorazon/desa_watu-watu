@@ -53,7 +53,7 @@ Route::get('/profil-desa/profil-perangkat-desa', [ProfilPerangkatDesaController:
 Route::get('/profil-desa/peta-desa', [PetaDesaController::class, 'show'])->name('petaDesa');
 
 // Berita Desa
-Route::get('/berita-desa', [BeritaDesaController::class, 'show'])->name('beritaDesa');
+Route::get('/berita', [BeritaDesaController::class, 'show'])->name('beritaDesa');
 Route::get('/berita-desa/{slug}', [BeritaDesaController::class, 'showBerita'])->name('detailBerita');
 Route::get('/berita/cari', [BeritaDesaController::class, 'search'])->name('cariBerita');
 
@@ -64,7 +64,7 @@ Route::get('/galeri', [GaleriDesaController::class, 'show'])->name('galeri');
 Route::get('/kontak', [AppController::class, 'kontak'])->name('kontak');
 
 // Kegiatan Desa
-Route::get('/kegiatan-desa', [KegiatanDesaController::class, 'show'])->name('kegiatanDesa');
+Route::get('/kegiatan', [KegiatanDesaController::class, 'show'])->name('kegiatanDesa');
 
 // Login Admin
 Route::get('/login', [AuthController::class, 'index'])->middleware('guest')->name('login');

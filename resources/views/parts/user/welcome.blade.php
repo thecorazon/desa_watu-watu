@@ -1,5 +1,5 @@
 <section id="about-desa" class="about-section-padding mt-2 mb-2">
-    <div class="container my-5">
+    <div class="container my-5" data-aos="fade-left"  data-aos-duration="1500">
         <div class="row">
             <div class="col-lg-4 col-md-12 col-12 text-center my-5">
                 <div class="about-img">
@@ -10,7 +10,9 @@
                 <div class="about-text">
                     <p class="fs-4 fw-bold">Desa Watu-Watu <br> Kecamatan Lantari Jaya <br> Kabupaten Bombana</p>
                     @isset($profilDesa)
+                    <div align="justify">
                         {!! $profilDesa->deskripsi !!}
+                    </div>
                     @endisset
                 </div>
             </div>

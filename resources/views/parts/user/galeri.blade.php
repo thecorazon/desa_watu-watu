@@ -1,5 +1,5 @@
 <section id="galeri-desa" class="mt-3 mb-4">
-    <div class="container p-4">
+    <div class="container p-4" data-aos="zoom-in" data-aos-duration="1500">
         <h4 class="text-center fw-bold mt-5 mb-3">Galeri Desa Watu-Watu</h4>
         <div class="row row-cols-1 row-cols-md-3 g-4 pb-5 row-galeri">
 

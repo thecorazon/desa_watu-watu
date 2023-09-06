@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg bg-green p-1 fixed-top navbar-desa">
+<nav class="navbar navbar-expand-lg bg-green p-1 fixed-top navbar-desa" >
     <div class="container">
         <a class="navbar-brand d-flex" href="/">
             <img src="{{ asset('assets/images/logo_bombana.png') }}" alt="Kabupaten Pekalongan" width="40" height="45" class="d-inline-block align-text-top">
@@ -29,13 +29,13 @@
                     </ul>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link {{ Request::is('berita-desa') ? 'active' : '' }}" href="/index.php/berita-desa">Berita Desa</a>
+                    <a class="nav-link {{ Request::is('berita') ? 'active' : '' }}" href="/berita">Berita Desa</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link {{ Request::is('galeri') ? 'active' : '' }}" href="/galeri">Galeri</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link {{ Request::is('kegiatan-desa') ? 'active' : '' }}" href="/index.php/kegiatan-desa">Kegiatan Desa</a>
+                    <a class="nav-link {{ Request::is('kegiatan') ? 'active' : '' }}" href="/kegiatan">Kegiatan Desa</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link {{ Request::is('kontak') ? 'active' : '' }}" href="/kontak">Kontak</a>

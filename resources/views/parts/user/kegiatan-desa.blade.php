@@ -1,5 +1,5 @@
 <section id="kegiatan-desa">
-    <div class="container my-5">
+    <div class="container my-5" data-aos="fade-up" data-aos-duration="1500">
         <div class="my-5">
             <h4 class="text-center fw-bold mb-3">Kegiatan Desa Watu-Watu</h4>
             <div class="slideshow-kegiatan mb-3">
