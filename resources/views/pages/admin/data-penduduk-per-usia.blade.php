@@ -1,7 +1,6 @@
 @extends('layouts.dashboard')
 
 @section('content')
-
 <h1 class="mt-4">Data Penduduk Per Usia</h1>
 <ol class="breadcrumb mb-4">
     <li class="breadcrumb-item"><a href="{{ route('dashboard') }}">Dashboard</a></li>
@@ -14,7 +13,7 @@
     </div>
 </div>
 
-@if(Session::has('success'))
+@if (Session::has('success'))
 <div class="alert alert-success alert-dismissible fade show" role="alert">
     Hapus data penduduk berhasil!
     <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
@@ -30,7 +29,7 @@
     <div class="card-body">
         <div class="row">
             <div class="col-md-12">
-                <table id="tb-data-penduduk-per-usia" class="table" style="width: 100%">
+                <table id="tb-data-penduduk" class="table" style="width: 100%">
                     <thead>
                         <tr>
                             <th>Tahun</th>
@@ -74,11 +73,4 @@
                         @endforeach
                     </tbody>
                 </table>
-            </div>
-        </div>
-    </div>
-</div>
-
-
-@endsection
-
+                @endsection

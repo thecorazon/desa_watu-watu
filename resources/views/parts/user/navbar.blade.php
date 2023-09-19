@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg bg-green p-1 fixed-top navbar-desa">
+<nav class="navbar navbar-expand-lg bg-green p-1 fixed-top navbar-desa" >
     <div class="container">
         <a class="navbar-brand d-flex" href="/">
             <img src="{{ asset('assets/images/logo_bombana.png') }}" alt="Kabupaten Pekalongan" width="40" height="45" class="d-inline-block align-text-top">
@@ -11,6 +11,10 @@
             <ul class="navbar-nav mb-2 mb-lg-0 ms-auto">
                 <li class="nav-item">
                     <a class="nav-link {{ Request::is('/') ? 'active' : '' }}" aria-current="page" href="/">Home</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link {{ Request::is('data-penduduk') ? 'active' : '' }}" aria-current="page" href="/data-penduduk">Data Penduduk</a>
                 </li>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle {{ Request::is('profil-desa') ? 'active' : '' }}" role="button" data-bs-toggle="dropdown" aria-expanded="false" href="#">Profil Desa</a>
@@ -25,13 +29,13 @@
                     </ul>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link {{ Request::is('berita-desa') ? 'active' : '' }}" href="/index.php/berita-desa">Berita Desa</a>
+                    <a class="nav-link {{ Request::is('berita') ? 'active' : '' }}" href="/berita">Berita Desa</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link {{ Request::is('galeri') ? 'active' : '' }}" href="/galeri">Galeri</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link {{ Request::is('kegiatan-desa') ? 'active' : '' }}" href="/index.php/kegiatan-desa">Kegiatan Desa</a>
+                    <a class="nav-link {{ Request::is('kegiatan') ? 'active' : '' }}" href="/kegiatan">Kegiatan Desa</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link {{ Request::is('kontak') ? 'active' : '' }}" href="/kontak">Kontak</a>

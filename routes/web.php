@@ -15,10 +15,21 @@ use App\Http\Controllers\ProfilPerangkatDesaController;
 use App\Http\Controllers\SejarahDesaController;
 use App\Http\Controllers\StrukturOrganisasiController;
 use App\Http\Controllers\VisiMisiController;
+use App\Http\Controllers\KontakController;
+use App\Models\DataPenduduk;
 use Illuminate\Support\Facades\Route;
 
 // Home
 Route::get('/', [AppController::class, 'index'])->name('home');
+
+
+// data pendduduk
+
+Route::get('/data-penduduk', [DataPendudukController::class, 'dataPenduduk'])->name("dataPenduduk");
+
+
+Route::post('/data-penduduk', [DataPendudukController::class, 'dataPenduduk'])->name("dataPenduduk");
+
 
 // Profil Desa
 Route::get('/profil-desa', [ProfilDesaController::class, 'show'])->name('profilDesa');
@@ -42,7 +53,7 @@ Route::get('/profil-desa/profil-perangkat-desa', [ProfilPerangkatDesaController:
 Route::get('/profil-desa/peta-desa', [PetaDesaController::class, 'show'])->name('petaDesa');
 
 // Berita Desa
-Route::get('/berita-desa', [BeritaDesaController::class, 'show'])->name('beritaDesa');
+Route::get('/berita', [BeritaDesaController::class, 'show'])->name('beritaDesa');
 Route::get('/berita-desa/{slug}', [BeritaDesaController::class, 'showBerita'])->name('detailBerita');
 Route::get('/berita/cari', [BeritaDesaController::class, 'search'])->name('cariBerita');
 
@@ -53,12 +64,19 @@ Route::get('/galeri', [GaleriDesaController::class, 'show'])->name('galeri');
 Route::get('/kontak', [AppController::class, 'kontak'])->name('kontak');
 
 // Kegiatan Desa
-Route::get('/kegiatan-desa', [KegiatanDesaController::class, 'show'])->name('kegiatanDesa');
+Route::get('/kegiatan', [KegiatanDesaController::class, 'show'])->name('kegiatanDesa');
 
 // Login Admin
 Route::get('/login', [AuthController::class, 'index'])->middleware('guest')->name('login');
 Route::post('/login', [AuthController::class, 'authenticate'])->name('auth');
 Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
+
+// data penduduk users
+
+
+
+
+
 
 // Dashboard Admin
 Route::get('/dashboard', [DashboardController::class, 'index'])->middleware('auth')->name('dashboard');
@@ -121,6 +139,7 @@ Route::post('/dashboard/edit-berita-desa/{id}', [BeritaDesaController::class, 'u
 Route::post('/dashboard/hapus-berita-desa/{id}', [BeritaDesaController::class, 'destroy'])->middleware('auth')->name('hapusBeritaDesaAdmin');
 Route::get('/dashboard/berita-desa/{slug}', [BeritaDesaController::class, 'detail'])->middleware('auth')->name('tampilBeritaDesa');
 
+
 // Data Penduduk
 Route::get('/dashboard/data-penduduk', [DataPendudukController::class, 'index'])->middleware('auth')->name('dataPendudukAdmin');
 Route::get('dashboard/tambah-data-penduduk', [DataPendudukController::class, 'create'])->middleware('auth')->name('tambahDataPendudukAdmin');
@@ -136,6 +155,12 @@ Route::post('dashboard/tambah-data-penduduk-per-usia', [DataPendudukPerUsiaContr
 Route::get('dashboard/edit-data-penduduk-per-usia/{id}', [DataPendudukPerUsiaController::class, 'edit'])->middleware('auth')->name('editDataPendudukPerUsiaAdmin');
 Route::post('dashboard/edit-data-penduduk-per-usia/{id}', [DataPendudukPerUsiaController::class, 'update'])->middleware('auth')->name('editDataPendudukPerUsiaAdmin');
 Route::post('dashboard/hapus-data-penduduk-per-usia/{id}', [DataPendudukPerUsiaController::class, 'destroy'])->middleware('auth')->name('hapusDataPendudukPerUsiaAdmin');
+
+
+// Kontak Admin
+Route::get('/dashboard/kontak', [KontakController::class, 'index'])->middleware('auth')->name('kontakAdmin');
+Route::post('/dashboard/kontakAdmin', [KontakController::class, 'update'])->middleware('auth')->name('editKontak');
+
 
 // Generate Sitemap
 Route::get('/genSet', [AppController::class, 'generateSitemap']);

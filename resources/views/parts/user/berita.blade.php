@@ -1,9 +1,9 @@
-<section id="berita-desa" class="mt-3 mb-3">
-    <div class="container">
-        <h4 class="text-center fw-bold mt-5">Berita Terkini</h4>
+<section id="berita-desa">
+    <div class="container my-5">
+        <h4 class="text-center fw-bold">Berita Terkini</h4>
         <p class="text-center text-berita-1">Berikut ini adalah berita terkini tentang Desa Watu-Watu</p>
         
-        <div class="row row-cols-1 row-cols-md-3 g-4">
+        <div class="row row-cols-1 row-cols-md-3 g-4" data-aos="fade-up" data-aos-duration="1500">
             @if(isset($beritaDesa))
                 @for($i = 0; $i < $beritaDesa->count(); $i++)
                     @break($i > 5)
@@ -25,7 +25,7 @@
         </div>
 
         <div class="col-12 text-center">
-            <a class="btn btn-outline-primary mt-3" type="button" href="/berita-desa">Selengkapnya</a>
+            <a class="btn btn-outline-primary mt-3 mb-4" type="button" href="/berita-desa">Selengkapnya</a>
         </div>
     </div>
 </section>

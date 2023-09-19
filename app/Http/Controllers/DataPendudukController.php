@@ -5,22 +5,57 @@ namespace App\Http\Controllers;
 use App\Models\DataPenduduk;
 use App\Http\Requests\StoreDataPendudukRequest;
 use App\Http\Requests\UpdateDataPendudukRequest;
+use App\Models\DataPendudukPerUsia;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\Validator;
 
 class DataPendudukController extends Controller
 {
+
+
+
+    public function dataPenduduk()
+    {
+     
+        $tahun = date("Y");
+
+
+        $data =  $_POST['data'] ?? $tahun; 
+       
+        $dataPenduduk = DataPenduduk::latest()->firstWhere("tahun", $data);
+        $date = DataPenduduk::all();
+        $dataPendudukPerusia = DataPendudukPerUsia::latest()->firstWhere("tahun", $data);
+
+        return view("pages.user.data-penduduk")->with([
+            'dataPenduduk' => $dataPenduduk,
+            'dataPendudukPerusia' => $dataPendudukPerusia,
+            'date' => $date
+
+        ]);
+
+
+    }
+
+
+
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
         $data = DataPenduduk::all();
+        $dataPendudukPerusia = DataPendudukPerUsia::all();
 
-        return view('pages.admin.data-penduduk')->with([
-            'dataPenduduk' => $data
+        return view("pages.admin.data-penduduk", [
+            'dataPenduduk' => $data,
+            'dataPendudukPerusia' => $dataPendudukPerusia
         ]);
+
+        // return view('pages.admin.data-penduduk')->with([
+           
+        // ]);
     }
+
 
     /**
      * Show the form for creating a new resource.
@@ -65,6 +100,12 @@ class DataPendudukController extends Controller
     public function show(DataPenduduk $dataPenduduk)
     {
         //
+    }
+    public function showByYear($year)
+    {
+    // Ambil data dari basis data berdasarkan tahun
+        $data = DataPenduduk::whereYear('tahun', $year)->get();
+        return response()->json($data);
     }
 
     /**
